@@ -1,0 +1,115 @@
+@import "../../global.scss";
+
+.webouter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    background-color: $mainBackColor;
+    color: $primaryText;
+    text-align: center;
+}
+
+.web {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $mainBackColor;
+    color: $primaryText;
+    text-align: center;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    ul {
+        // margin for desktop view
+        margin: 190px 10px 0 10px;
+        // original margin when H1 was shown
+        // margin: 10px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 70%;
+
+        .itemContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // justify-content: center;
+                justify-content: space-around;
+                position: relative;
+                width: 220px;
+                height: 150px;
+                border-radius: 20px;
+                border: 1px solid $secondaryText;
+                margin: 10px 20px;
+                color: $primaryText;
+                transition: all .75s ease;
+                box-shadow: 0px 0px 15px -8px $secondaryText;
+                // cursor: pointer;
+
+                img {
+                    // width: 275px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 1;
+                }
+
+                h3 {
+                    position: absolute;
+                    font-size: 20px;
+                    top: 35px;
+                }
+
+                a .website {
+                    position: absolute;
+                    bottom: 35px;
+                    left: 35px;
+                    text-decoration: none;
+                    border: 1px solid $secondaryText;
+                    border-radius: 10px;
+                    padding: 0 5px;
+                }
+
+                a .github {
+                    position: absolute;
+                    bottom: 35px;
+                    right: 35px;
+                    border: 1px solid $secondaryText;
+                    border-radius: 10px;
+                    padding: 0 5px;
+                }
+
+                a:visited {
+                    color: $primaryText;
+                }
+
+                &:hover {
+                    background-color: $hoverColor;
+
+                    img {
+                        opacity: 0.2;
+                        z-index: 0;
+                    }
+                }
+            }
+        }
+    }
+}

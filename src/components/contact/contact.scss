@@ -1,0 +1,126 @@
+@import "../../global.scss";
+
+.contact {
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    background-color: $mainBackColor;
+    color: $primaryText;
+
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        // background-color: $hoverColor;
+
+        img {
+            height: 100%;
+            // padding left for macbook view
+            padding-left: 15%;
+            // width: 750px;
+            // background-color: pink;
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+
+        .formWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+            height: 70%;
+            width: 70%;
+            // use 30% if no img is used on left side
+            // width: 30%;
+            border-radius: 10px;
+            background-color: $menuColor;
+            box-shadow: 0px 0px 15px -8px $secondaryText;
+
+            h2 {
+                font-size: 40px;
+            }
+
+            p {
+                width: 90%;
+                font-size: 14px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                // width: 70%;
+                height: 60%;
+                
+                ::placeholder {
+                    color: $primaryText;
+                    // padding-left: 5px;
+                }
+
+                input {
+                    width: 330px;
+                    height: 30px;
+                    font-size: 14px;
+                    border: 1px solid $secondaryText;
+                    border-radius: 10px;
+                    background-color: $hoverColor;
+                    color: $primaryText;
+                    padding: 0 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                textarea {
+                    width: 330px;
+                    height: 200px;
+                    font-size: 14px;
+                    // border: 1px solid $secondaryText;
+                    border-radius: 10px;
+                    background-color: $hoverColor;
+                    color: $primaryText;
+                    padding: 5px 10px 10px 10px;
+                    resize: none;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                button {
+                    width: 150px;
+                    height: 30px;
+                    border: none;
+                    border-radius: 10px;
+                    font-weight: 500;
+                    border: 1px solid $secondaryText;
+                    background-color: $hoverColor;
+                    color: $primaryText;
+                    cursor: pointer;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                span {
+                    color: $primaryText;
+                }
+            }
+
+            .message {
+                padding-bottom: 15px;
+            }
+        }
+    }
+}

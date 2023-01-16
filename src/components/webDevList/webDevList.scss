@@ -1,0 +1,14 @@
+@import "../../global.scss";
+
+.webDevList {
+    font-size: 14px;
+    margin: 25px;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &.active {
+        background-color: $hoverColor;
+        color: $primaryText;
+    }
+}
