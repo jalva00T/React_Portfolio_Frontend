@@ -1,19 +1,74 @@
 import "./about.scss";
-
-
-// const pic1 = "https://res.cloudinary.com/dlr6ybcfd/image/upload/v1660162078/1_omq48j.jpg";
-// const pic2 = "https://res.cloudinary.com/dlr6ybcfd/image/upload/v1660162080/2_spebyu.jpg";
-// const pic3 = "https://res.cloudinary.com/dlr6ybcfd/image/upload/v1660162075/3_qcxpnl.jpg";
-// const pic4 = "https://res.cloudinary.com/dlr6ybcfd/image/upload/v1660162074/4_tzrcec.jpg";
-// const pic5 = "https://res.cloudinary.com/dlr6ybcfd/image/upload/v1660162073/5_th7wlu.jpg";
-// const pic6 = "https://res.cloudinary.com/dlr6ybcfd/image/upload/v1660162082/6_rokaaf.jpg";
+import Typewriter from "typewriter-effect";
+import { useState, useEffect } from "react";
 
 export default function About() {
+  const [currentPic, setCurrentPic] = useState(0)
+
+  const data = [
+    {
+
+      img: "/assets/photo/test_pic.jpg",
+      photo_descr: "~",
+      gear_info: "kajsdhflkasjdhfbsadfkljhlaksjdhf",
+    },
+    {
+
+      img: "/assets/photo/test_pic.jpg",
+      photo_descr: "~",
+      gear_info: "~",
+    },
+    {
+
+      img: "/assets/photo/test_pic.jpg",
+      photo_descr: "~",
+      gear_info: "~",
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentPic === 2) {
+        setCurrentPic(0)
+      }
+      else {
+        setCurrentPic(currentPic + 1)
+      }
+    }, /*6500*/6000)
+    return () => clearTimeout(timer)
+  }, [currentPic])
+
+  // const handleClick = (way) => {
+  //   way === "left"
+  //   ? setCurrentPic(currentPic > 0 ? currentPic -1 : 2)
+  //   : setCurrentPic(currentPic < data.length -1 ? currentPic +1 : 0)
+  // }
+
   return (
     <div className="about" id="about">
-      <div>About</div>
-      {/* <div className="pics"></div>
-      <div className="info"></div> */}
+      <div className="transparent-bg"></div>
+      <div className="slider" style={{ transform: `translateX(-${currentPic * 100}vw)` }}>
+        
+        {data.map((d) => (<div className="pics"> {/* className pics = container */}
+          <img src={d.img} alt="" />
+        </div>))}
+      </div>
+      <img className="logo" src="/assets/logo/logo.png" alt="" /> {/* img tag = className item */}
+      <div className="info">
+        <Typewriter
+          options={{
+            strings: ['HELLO, I\'M MIDI DATA. NICE TO MEET YOU.', 'I AM A MULTIMEDIA ARTIST & WEB DEVELOPER', 'FROM TULSA, OKLAHOMA.'],
+            autoStart: true,
+            loop: true,
+            pauseFor: 2250,
+            cursor: '',
+            delay: 60,
+            deleteSpeed: 18,
+          }}
+        />
+      </div>
+      {/* <img src="assets/global/arrow.png" className="arrow left" alt="" onClick={() => handleClick("left")} />
+      <img src="assets/global/arrow.png" className="arrow right" alt="" onClick={() => handleClick("right")} /> */}
     </div>
   )
 }

@@ -12,7 +12,7 @@ export default function Photo() {
     },
     {
       id: "1",
-      img: "/assets/photo/IMG_3448 2.jpg",
+      img: "/assets/photo/IMG_3448.jpg",
       photo_descr: "Growth Setup",
       gear_info: "Iphone7",
       featured: true,
@@ -64,7 +64,6 @@ export default function Photo() {
           </div>
           ))}
         </div>
-
       </div>
       <img src="assets/global/arrow.png" className="arrow left" alt="" onClick={() => handleClick("left")} />
       <img src="assets/global/arrow.png" className="arrow right" alt="" onClick={() => handleClick("right")} />
